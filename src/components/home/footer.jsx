@@ -25,8 +25,13 @@ const Footer = () => {
             <FaInstagram size={20} />
           </a>
         </div>
+        <div className="footer-contact">
+          <p>Email: <a href="mailto:contact@starlightreads.com">contact@starlightreads.com</a></p>
+          <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+          <p>Address: <a>123 Starlight Ave, Cityville, Country</a></p>
+        </div>
         <div className="footer-copyright">
-          <p>&copy; 2025 Starlights Reads!. All rights reserved.</p>
+          <p>&copy; 2025 Starlight Reads!. All rights reserved.</p>
         </div>
       </div>
     </footer>
