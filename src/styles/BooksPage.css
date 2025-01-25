@@ -1,0 +1,292 @@
+
+.edit-form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    animation: fadeIn 0.5s ease-out;
+}
+
+
+.edit-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    animation: slideIn 0.6s ease-out;
+}
+
+.edit-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"],
+input[type="file"] {
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s, transform 0.2s;
+    width: 90%; 
+}
+
+input[type="text"]:focus,
+input[type="file"]:focus {
+    border-color: #007BFF;
+    transform: scale(1.05);
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-save {
+    background-color: #20c997; 
+    color: white;
+}
+
+.btn-save:hover {
+    background-color: #17a2b8;
+    transform: scale(1.05);
+}
+
+.btn-cancel {
+    background-color: red; 
+    color: white;
+}
+
+.btn-cancel:hover {
+    background-color:red;
+    transform: scale(1.05);
+}
+
+.books-page-container {
+    padding: 20px;
+    background-color: #ffffff; 
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+
+.scroll-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 100px;
+}
+
+.book-list-wrapper {
+    display: flex;
+    width: 100%;
+    overflow-x: auto; 
+    scroll-behavior: smooth; 
+    padding-bottom: 20px; 
+}
+
+.book-list {
+    display: flex;
+    gap: 16px;
+}
+
+.book-card {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 300px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.book-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.book-details {
+    padding: 12px;
+}
+
+.book-name {
+    font-size: 18px;
+    margin: 0;
+    color: #333;
+}
+
+.book-author,
+.book-genre {
+    font-size: 14px;
+    color: #555;
+    margin: 4px 0;
+}
+
+
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #20c997; 
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-button.left {
+    left: 10px;
+}
+
+.scroll-button.right {
+    right: 10px;
+}
+
+.scroll-button:hover {
+    background-color: #17a2b8;
+    transform: scale(1.1);
+}
+
+.scroll-button:active {
+    transform: scale(0.9);
+}
+
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; 
+}
+
+.buttons button {
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    flex: 1;
+    font-size: 14px;
+}
+
+.btn-edit {
+    background-color: green; 
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #17a2b8;
+}
+
+.btn-delete {
+    background-color: #e63946;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #d32f2f;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-bar input {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+  }
+  
+  .search-bar input:focus {
+    border-color: #036280;
+    outline: none;
+  }
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideIn {
+    0% { transform: translateY(-50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+
+@media (max-width: 768px) {
+    .edit-form {
+        padding: 15px;
+        width: 90%;
+    }
+
+    .books-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .book-card {
+        width: 100%;
+        max-width: 350px;
+        margin: 10px auto;
+    }
+}
