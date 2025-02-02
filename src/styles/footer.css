@@ -71,5 +71,47 @@
 .footer-copyright {
   font-size: 0.875rem;
   color: white;
-  
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+    padding: 20px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-socials {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-logo h2 {
+    font-size: 1.25rem;
+  }
+
+  .footer-contact {
+    font-size: 0.9rem;
+  }
+
+  .footer-copyright {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-logo h2 {
+    font-size: 1rem;
+  }
+
+  .footer-links {
+    gap: 8px;
+  }
+
+  .footer-social-link {
+    font-size: 1rem;
+  }
 }

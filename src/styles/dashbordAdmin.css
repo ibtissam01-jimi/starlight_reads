@@ -1,4 +1,3 @@
-
 .dashboard {
   background-color: #f4f4f9; 
   padding: 40px;
@@ -11,7 +10,6 @@
   animation: fadeIn 1s ease-out;
 }
 
-
 .dashboard h2 {
   font-size: 28px;
   text-align: center;
@@ -22,14 +20,12 @@
   text-transform: uppercase;
 }
 
-
 .stats-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
   padding: 20px;
 }
-
 
 .chart-card {
   background-color: #ffffff;
@@ -40,7 +36,6 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   animation: slideInUp 0.5s ease-out;
 }
-
 
 .chart-card:hover {
   transform: translateY(-10px);
@@ -54,23 +49,83 @@
   margin-bottom: 20px;
 }
 
-
 @keyframes fadeIn {
   from {
-      opacity: 0;
+    opacity: 0;
   }
   to {
-      opacity: 1;
+    opacity: 1;
   }
 }
 
 @keyframes slideInUp {
   from {
-      transform: translateY(30px);
-      opacity: 0;
+    transform: translateY(30px);
+    opacity: 0;
   }
   to {
-      transform: translateY(0);
-      opacity: 1;
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .dashboard {
+    padding: 30px;
+    margin: 30px auto;
+  }
+
+  .dashboard h2 {
+    font-size: 24px;
+  }
+
+  .stats-container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .chart-card h3 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  .dashboard h2 {
+    font-size: 20px;
+  }
+
+  .stats-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .chart-card h3 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .dashboard {
+    padding: 15px;
+    margin: 15px auto;
+  }
+
+  .dashboard h2 {
+    font-size: 18px;
+  }
+
+  .stats-container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .chart-card h3 {
+    font-size: 18px;
   }
 }

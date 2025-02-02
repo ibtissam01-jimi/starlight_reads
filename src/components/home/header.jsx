@@ -1,10 +1,16 @@
 // header.jsx
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaHeart, FaShoppingCart } from "react-icons/fa";
+import { FaHeart, FaShoppingCart, FaBars, FaTimes } from "react-icons/fa";
 import "../../styles/header.css";
 
 const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <header className="header">
       <div className="logo">
@@ -12,11 +18,12 @@ const Header = () => {
         <h1>Starlight Reads!</h1>
       </div>
       <nav>
-        <ul className="nav-links">
+        <div className="hamburger" onClick={toggleMenu}>
+          {menuOpen ? <FaTimes size={30} color="#036280" /> : <FaBars size={30} color="#036280" />}
+        </div>
+        <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
           <li>
-            <Link to="/" >
-              Home
-            </Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
             <Link to="/about">About</Link>
@@ -35,18 +42,17 @@ const Header = () => {
               </li>
             </ul>
           </li>
-          
           <li>
             <Link to="/contact">Contact</Link>
           </li>
-          <div className="favorites-badge">
-            <li>
-              <Link to="/favoris"><FaHeart size={24} color="#036280" /></Link>
-            </li>
-            <FaShoppingCart size={24} color="#036280" style={{ marginLeft: "10px" }} />
-          </div>
         </ul>
       </nav>
+      <div className="favorites-badge">
+        <Link to="/favoris">
+          <FaHeart size={24} color="#036280" />
+        </Link>
+        <FaShoppingCart size={24} color="#036280" style={{ marginLeft: "10px" }} />
+      </div>
       <div className="auth-buttons">
         <Link to="/signin">
           <button className="sign-in">Sign In</button>

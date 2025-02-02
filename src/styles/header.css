@@ -1,18 +1,18 @@
-
+/* header.css */
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Centre le menu */
   align-items: center;
   background-color: white;
   padding: 15px 30px;
-  color: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
-
 
 .logo {
   display: flex;
   align-items: center;
+  margin-right: auto; /* Place le logo à gauche */
 }
 
 .logo img {
@@ -26,7 +26,6 @@
 .logo h1 {
   font-size: 15px;
   font-weight: bold;
-  color: black;
   font-family: 'Playfair Display', serif;
   font-weight: 900;
   font-style: italic;
@@ -34,13 +33,14 @@
   letter-spacing: 0.5px;
 }
 
-
 .nav-links {
   list-style: none;
   display: flex;
   gap: 30px;
   margin: 0;
   padding: 0;
+  flex: 1; /* Permet au menu de prendre l'espace disponible */
+  justify-content: center; /* Centre le menu */
 }
 
 .nav-links li {
@@ -58,7 +58,6 @@
 .nav-links a:hover {
   color: #FF6500;
 }
-
 
 .dropdown {
   position: relative;
@@ -92,15 +91,22 @@
   color: white;
 }
 
-
 .dropdown:hover .dropdown-menu {
   display: block;
 }
 
+.favorites-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 20px;
+  cursor: pointer;
+}
 
 .auth-buttons {
   display: flex;
   gap: 10px;
+  margin-left: auto; /* Décale les boutons à droite */
 }
 
 .auth-buttons .sign-in,
@@ -123,25 +129,66 @@
   color: white;
 }
 
-.favorites-badge {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  margin-left: 20px;
+/* Hamburger Menu */
+.hamburger {
+  display: none;
   cursor: pointer;
+  position: absolute; /* Positionner l'icône hamburger en haut à droite */
+  top: 10px;
+  right: 30px;
+  transform: translateX(50%);
 }
 
-
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-
-  .auth-buttons {
-    display: none;
+  .header {
+    flex-direction: column;
+    align-items: center;
   }
 
   .logo h1 {
     font-size: 20px;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    padding: 10px 20px;
+    width: 100%;
+    text-align: left;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .favorites-badge {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .auth-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .auth-buttons .sign-in,
+  .auth-buttons .sign-up {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hamburger {
+    display: block;
   }
 }
