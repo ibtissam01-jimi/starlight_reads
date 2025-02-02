@@ -16,7 +16,7 @@ import AddBookForm from "./components/admin/BookAdd";
 function App() {
   return (
     <Provider store={store}>
-    <Router>
+    <Router basename="/starlight_reads">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/signin" element={<SignIn />} />
