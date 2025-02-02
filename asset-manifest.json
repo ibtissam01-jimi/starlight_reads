@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/starlight_reads/static/css/main.e9cb2156.css",
+    "main.js": "/starlight_reads/static/js/main.70402f1a.js",
+    "static/js/488.9134d9a2.chunk.js": "/starlight_reads/static/js/488.9134d9a2.chunk.js",
+    "static/media/background.jpg": "/starlight_reads/static/media/background.bdeea18ac2437951671c.jpg",
+    "static/media/about1.jpeg": "/starlight_reads/static/media/about1.8dcb29dc7d1066f3da5c.jpeg",
+    "index.html": "/starlight_reads/index.html",
+    "main.e9cb2156.css.map": "/starlight_reads/static/css/main.e9cb2156.css.map",
+    "main.70402f1a.js.map": "/starlight_reads/static/js/main.70402f1a.js.map",
+    "488.9134d9a2.chunk.js.map": "/starlight_reads/static/js/488.9134d9a2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e9cb2156.css",
+    "static/js/main.70402f1a.js"
+  ]
+}
