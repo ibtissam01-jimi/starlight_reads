@@ -5,6 +5,7 @@ import "../../styles/NavbarAdmin.css";
 
 const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [userName, setUserName] = useState("");
 
   useEffect(() => {
@@ -19,42 +20,38 @@ const Navbar = () => {
     setShowDropdown(!showDropdown);
   };
 
+  const toggleMobileMenu = () => {
+    setShowMobileMenu(!showMobileMenu);
+  };
+
   return (
     <nav className="navbarNav">
-      <ul className="navbar-listNav">
-        <div className="logoNav">
-          <img src="/images/logolib.jpg" alt="Logo" />
-          <h1>Starlight Reads!</h1>
-        </div>
+      <div className="logoNav">
+        <img src="/images/logolib.jpg" alt="Logo" />
+        <h1>Starlight Reads!</h1>
+      </div>
+      
+      <div className="burger-menu" onClick={toggleMobileMenu}>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
 
-        <li>
-          <Link to="/dashboard">Dashboard</Link>
-        </li>
-
-        <li
-          className="dropdownNav"
-          onMouseEnter={toggleDropdown}
-          onMouseLeave={toggleDropdown}
-        >
-          <span style={{color:"#ffff"}}>Books</span>
+      <ul className={`navbar-listNav ${showMobileMenu ? "show" : ""}`}>
+        <li><Link to="/dashboard">Dashboard</Link></li>
+        
+        <li className="dropdownNav" onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
+          <span>Books</span>
           {showDropdown && (
             <ul className="dropdown-menuNav">
-              <li>
-                <Link to="/edit_delete_books">Books List</Link>
-              </li>
-              <li>
-                <Link to="/add-book">Add Books</Link>
-              </li>
+              <li><Link to="/edit_delete_books">Books List</Link></li>
+              <li><Link to="/add-book">Add Books</Link></li>
             </ul>
           )}
         </li>
 
-        <li>
-          <Link to="/admin/users">Users</Link>
-        </li>
-        <li>
-          <Link to="/loans">Loans</Link>
-        </li>
+        <li><Link to="/admin/users">Users</Link></li>
+        <li><Link to="/loans">Loans</Link></li>
       </ul>
 
       <div className="profile-sectionNav">
@@ -68,4 +65,5 @@ const Navbar = () => {
     </nav>
   );
 };
-export default Navbar
+
+export default Navbar;

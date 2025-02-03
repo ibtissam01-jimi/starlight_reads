@@ -1,23 +1,24 @@
+/* Styles de base pour la navbar */
 .navbarNav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #036280;
-    padding: 15px 60px;
+    padding: 15px 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 0.5s ease-in-out;
+    position: relative;
 }
 
+/* Logo */
 .logoNav {
     display: flex;
     align-items: center;
-    margin-right: 80px;
 }
 
 .logoNav img {
-    width: 60px;
-    height: 60px;
-    margin-right: 20px;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
     border-radius: 50%;
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -28,53 +29,50 @@
 }
 
 .logoNav h1 {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     color: white;
     font-family: 'Playfair Display', serif;
     font-style: italic;
-    letter-spacing: 1px;
-    margin: 0;
-    padding-right: 100px;
 }
 
-.navbarNav ul {
+/* Styles pour le menu */
+.navbar-listNav {
     list-style: none;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
     margin: 0;
     padding: 0;
-    animation: fadeIn 0.6s ease-in-out;
-    flex-grow: 1;
-    justify-content: flex-start;
 }
 
-.navbarNav ul li {
-    margin-right: 50px;
+.navbar-listNav li {
+    margin: 0 20px;
     position: relative;
     padding: 5px;
 }
 
-.navbarNav ul li a {
+.navbar-listNav li a {
     text-decoration: none;
     color: #ffffff;
     font-size: 18px;
     transition: color 0.3s ease, transform 0.3s ease;
-    margin: 10px;
 }
 
-.navbarNav ul li a:hover {
+.navbar-listNav li a:hover {
     color: #00bcd4;
     transform: scale(1.1);
 }
 
+/* Menu déroulant */
 .dropdownNav {
     position: relative;
     padding: 10px;
-    animation: fadeIn 0.6s ease-in-out;
 }
 
 .dropdown-menuNav {
-    display: block;
+    display: none;
     position: absolute;
     top: 100%;
     left: 0;
@@ -83,33 +81,32 @@
     border-radius: 4px;
     z-index: 10;
     padding: 10px 0;
-    animation: slideDown 0.3s ease-in-out;
+    width: 150px;
+}
+
+.dropdownNav:hover .dropdown-menuNav {
+    display: block;
 }
 
 .dropdown-menuNav li {
-    margin: 0;
+    padding: 10px;
 }
 
 .dropdown-menuNav li a {
     display: block;
-    padding: 14px 30px;
-    color: #ffffff;
+    color: white;
     text-decoration: none;
-    font-size: 18px;
-    font-weight: 600;
-    transition: transform 0.3s ease;
 }
 
 .dropdown-menuNav li a:hover {
-    color: #00bcd4;
-    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.2);
 }
 
+/* Section Profil */
 .profile-sectionNav {
     display: flex;
     align-items: center;
-    animation: slideInRight 0.5s ease-out;
-    margin-left: 80px;
+    white-space: nowrap;
 }
 
 .profile-linkNav {
@@ -118,63 +115,60 @@
     text-decoration: none;
     color: #ffffff;
     font-size: 18px;
-    transition: color 0.3s ease;
-}
-
-.profile-linkNav:hover {
-    color: #00bcd4;
 }
 
 .profile-iconNav {
-    margin-right: 15px;
-}
-
-.profile-textNav {
-    font-weight: bold;
+    margin-right: 10px;
 }
 
 .admin-nameNav {
     font-size: 18px;
-    color: white;
-    margin-left: 15px;
     font-weight: bold;
-    letter-spacing: 1px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px; /* Ajuste la largeur max */
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+/* Menu Burger */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
 }
 
-@keyframes slideInLeft {
-    from {
-        transform: translateX(-100%);
-    }
-    to {
-        transform: translateX(0);
-    }
+.burger-menu div {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    transition: 0.3s;
 }
 
-@keyframes slideInRight {
-    from {
-        transform: translateX(100%);
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .navbar-listNav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #036280;
+        padding: 10px 0;
+        text-align: center;
     }
-    to {
-        transform: translateX(0);
-    }
-}
 
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
+    .navbar-listNav.show {
+        display: flex;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+    .burger-menu {
+        display: flex;
+    }
+
+    .profile-sectionNav {
+        position: absolute;
+        right: 10px;
+        top: 15px;
     }
 }
